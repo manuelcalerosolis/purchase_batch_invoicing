@@ -34,6 +34,9 @@ class PurchaseBatchInvoicing(models.TransientModel):
     def _default_purchase_order_ids(self):
         """Get purchase orders from active ids."""
         try:
+            _logger.info(self.env["purchase.order"].search(
+                self._purchase_order_domain(self.env.context["active_ids"])).ids)
+
             return self.env["purchase.order"].search(
                 self._purchase_order_domain(self.env.context["active_ids"])
             ).ids
@@ -87,6 +90,8 @@ class PurchaseBatchInvoicing(models.TransientModel):
         :return dict:
             Window action to see the generated invoices.
         """
+
+        _logger.info("action_batch_invoice--------------------------------------")
 
         invoices = self.env["account.invoice"]
         for pogroup in self.grouped_purchase_orders():

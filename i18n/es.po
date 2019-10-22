@@ -23,7 +23,7 @@ msgstr "Aceptar"
 #. module: purchase_batch_invoicing
 #: model:ir.actions.act_window,name:purchase_batch_invoicing.wizard_purchase_batch_invoicing_action
 msgid "Batch Invoice"
-msgstr "Facturar en lote"
+msgstr "Orden de facturación"
 
 #. module: purchase_batch_invoicing
 #: model_terms:ir.ui.view,arch_db:purchase_batch_invoicing.wizard_purchase_batch_invoicing_view
